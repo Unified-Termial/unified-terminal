@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Build scripts
+build.ps1
+build.sh
+
 # VSCode
 .vscode/
 
