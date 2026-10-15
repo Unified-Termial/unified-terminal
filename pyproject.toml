@@ -5,7 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "unified-terminal"
 version = "0.1.0"
-description = "A modern, fast and reliable terminal emulator"
+description = "A cross-platform desktop terminal emulator built with Python and Qt"
+readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "PySide6>=6.8",
@@ -13,11 +14,21 @@ dependencies = [
     "pywinpty>=2.0; platform_system == 'Windows'",
 ]
 
+[project.optional-dependencies]
+build = [
+    "Nuitka>=2.6",
+]
+
 [project.scripts]
 unified-terminal = "unified_terminal.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Unified-Termial/unified-terminal"
+Repository = "https://github.com/Unified-Termial/unified-terminal"
+Releases = "https://github.com/Unified-Termial/unified-terminal/releases"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.data-files]
-"share/unified-terminal" = ["assets/UT.png"]
+"share/unified-terminal" = ["assets/UT.png", "assets/UT.ico"]
