@@ -4,6 +4,8 @@
   <p>A lightweight desktop terminal emulator for Windows and Linux.</p>
 </div>
 
+[![GPLv3](https://img.shields.io/badge/GPLv3-FFFFFF)](#) [![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#) [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#) [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
+
 Unified Terminal is a Python and Qt terminal application. It uses
 [pyte](https://github.com/selectel/pyte) to render terminal output and launches
 the platform's shell through a pseudo-terminal backend.
