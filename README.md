@@ -28,6 +28,8 @@ extract the tarball and install with the `install.sh` file, `remove.sh` is the f
   movement, and screen updates.
 - **Resizable terminal** — adjusts the terminal grid and shell dimensions when
   the window is resized.
+- **Scrollback** — use the mouse wheel to review up to 1,000 lines of terminal
+  history on Windows and Linux.
 - **Copy and paste** — select text by dragging; use the keyboard shortcuts or
   right-click menu.
 - **Keyboard input** — supports common control sequences, navigation keys,
