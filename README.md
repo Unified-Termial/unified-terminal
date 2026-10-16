@@ -19,7 +19,7 @@ page for prebuilt binaries. If no release or downloadable assets are listed,
 install from source using the instructions below.
 
 ### Windows
-Run the installer or the portble zip
+Run the installer or the portable zip
 
 ### Linux
 extract the tarball and install with the `install.sh` file, `remove.sh` is the file to remove Unified Terminal on Linux
