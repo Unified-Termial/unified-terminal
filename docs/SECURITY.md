@@ -1,0 +1,1 @@
+Report vulnerabilities via [this form](https://tally.so/r/KpQJgD)
