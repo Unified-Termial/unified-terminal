@@ -14,11 +14,6 @@ dependencies = [
     "pywinpty>=2.0; platform_system == 'Windows'",
 ]
 
-[project.optional-dependencies]
-build = [
-    "Nuitka>=2.6",
-]
-
 [project.scripts]
 unified-terminal = "unified_terminal.__main__:main"
 

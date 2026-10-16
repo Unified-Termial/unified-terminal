@@ -102,7 +102,4 @@ The runtime dependencies are declared in [`pyproject.toml`](pyproject.toml):
 | [pywinpty](https://pypi.org/project/pywinpty/) `>=2.0` | Windows only | Windows pseudo-terminal backend |
 
 The Linux backend uses Python's standard-library PTY and terminal modules.
-Packaging uses setuptools; the repository's standalone build scripts also
-require [Nuitka](https://pypi.org/project/Nuitka/) and a platform-appropriate
-compiler toolchain. Install the optional build dependency with
-`python -m pip install -e ".[build]"`.
+Packaging uses setuptools.
