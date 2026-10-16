@@ -1,8 +1,12 @@
-<div align="center">
+<!-- <div align="center">
   <img src="https://raw.githubusercontent.com/Unified-Termial/unified-terminal-assets/refs/heads/master/img/v0.1.0.jpg" alt="Unified Terminal logo" width="">
   <h1>Unified Terminal</h1>
   <p>A lightweight desktop terminal emulator for Windows and Linux.</p>
-</div>
+</div> -->
+
+# Unified Terminal
+
+A lightweight desktop terminal emulator for Windows and Linux
 
 Unified Terminal is a Python and Qt terminal application. It uses
 [pyte](https://github.com/selectel/pyte) to render terminal output and launches
