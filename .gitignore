@@ -10,6 +10,9 @@ __pycache__/
 build.ps1
 build.sh
 
+# txt files
+run.txt
+
 # VSCode
 .vscode/
 
