@@ -11,6 +11,8 @@ from unified_terminal.input import TerminalInput
 
 class TerminalWidget(QWidget):
     PADDING = 12
+    SCROLLBACK_LINES = 1000
+    SCROLLBACK_RATIO = 0.1
     ANSI_COLORS = {
         "black": "#000000",
         "red": "#aa0000",
@@ -72,8 +74,14 @@ class TerminalWidget(QWidget):
         self.background = QColor("#111318")
         self.foreground = QColor("#f1f3f5")
 
-        self.vt_screen = pyte.Screen(lines=30, columns=100)
+        self.vt_screen = pyte.HistoryScreen(
+            lines=30,
+            columns=100,
+            history=self.SCROLLBACK_LINES,
+            ratio=self.SCROLLBACK_RATIO,
+        )
         self.vt_stream = pyte.Stream(self.vt_screen)
+        self._wheel_delta = 0.0
 
         self.terminal_input = TerminalInput()
         self.backend: TerminalBackend | None = None
@@ -189,6 +197,31 @@ class TerminalWidget(QWidget):
             event.accept()
             return
         super().mouseReleaseEvent(event)
+
+    def wheelEvent(self, event):
+        delta = event.angleDelta().y()
+        if not delta:
+            pixel_delta = event.pixelDelta().y()
+            if not pixel_delta:
+                super().wheelEvent(event)
+                return
+            delta = pixel_delta * 120 / (self.line_height * 3)
+
+        self._wheel_delta += delta
+        steps = int(self._wheel_delta / 120)
+        self._wheel_delta -= steps * 120
+
+        if steps:
+            scroll_page = (
+                self.vt_screen.prev_page
+                if steps > 0
+                else self.vt_screen.next_page
+            )
+            for _ in range(abs(steps)):
+                scroll_page()
+            self.update()
+
+        event.accept()
 
     def contextMenuEvent(self, event):
         menu = QMenu(self)
